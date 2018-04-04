@@ -1,27 +1,86 @@
-# NgxFacebookKit
+# Ngx Facebook Account Kit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This module is used for [Angular 5](https://angular.io/).  
+This module help you to use [Facebook Account Kit](https://developers.facebook.com/docs/accountkit/webjs) as service.  
 
-## Development server
+How to use:
+-------------
+### Installation:
+```html
+npm install ngx-facebook-kit
+```
+    
+### Import service:
+Edit in `src/app/app.module.ts`:
+```typescript
+//...
+import { FacebookKitModule, FacebookKitService } from 'ngx-facebook-kit';
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+const facebookKitLanguage = environment.facebookKit.language;
 
-## Code scaffolding
+const facebookKitConfigs = {
+  appId: '<appId>',
+  state: '<state>',
+  version: '<version>',
+  fbAppEventsEnabled: '<fbAppEventsEnabled>',
+  debug: '<debug>',
+  redirect: '<redirect>',
+  display: '<display>'
+};
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  //...
+  imports: [
+    //...
+    FacebookKitModule,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
 
-## Build
+  constructor(facebookKitService: FacebookKitService) {
+    facebookKitService.init(facebookKitConfigs, facebookKitLanguage);
+  }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+}
+```
 
-## Running unit tests
+And call in component:
+```typescript
+constructor(private _facebookKitService: FacebookKitService) {
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Login using phone
+```html
+<!-- Using directive -->
+<button [ngxLoginFacebookKitPhone]="{countryCode: '+84', phoneNumber: '0909999999'}"
+		(successEvent)="loginSuccess($event)"
+		(errorEvent)="loginError($event)">
+```
 
-## Running end-to-end tests
+```typescript
+//Using controller
+login() {
+    this._facebookKitService
+        .loginPhone('+84', '0909999999')
+        .subscribe((response) => {}, (error) => {});
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Login using email
+```html
+<!-- Using directive -->
+<button [ngxLoginFacebookKitEmail]="'teamcancode@localhost.com'"
+		(successEvent)="loginSuccess($event)"
+		(errorEvent)="loginError($event)">
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+//Using controller
+login() {
+    this._facebookKitService
+        .loginEmail('teamcancode@localhost.com')
+        .subscribe((response) => {}, (error) => {});
+}
+```

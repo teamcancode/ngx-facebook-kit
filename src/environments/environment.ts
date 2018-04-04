@@ -4,5 +4,15 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  facebookKit: {
+    language: 'en_US',
+    configs: {
+      appId: '190180488430749',
+      state: new Date().toString(),
+      version: 'v1.0',
+      fbAppEventsEnabled: true,
+      debug: true
+    }
+  }
 };

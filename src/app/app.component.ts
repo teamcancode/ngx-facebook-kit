@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx';
+
+  phone = {
+    countryCode: '+84',
+    phoneNumber: '',
+  };
+
+  email = '';
+
+  // noinspection JSMethodCanBeStatic
+  loginSuccess(response) {
+    console.log('Success', response);
+  }
+
+  // noinspection JSMethodCanBeStatic
+  loginError(response) {
+    console.log('Error', response);
+  }
+
 }

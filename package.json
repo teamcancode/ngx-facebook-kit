@@ -1,8 +1,31 @@
 {
   "name": "ngx-facebook-kit",
   "version": "0.0.0",
+  "description": "Use Facebook Account Kit with Angular5~ (https://developers.facebook.com/docs/accountkit/webjs)",
+  "main": "dist/publish.js",
+  "types": "dist/publish.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teamcancode/ngx-facebook-kit"
+  },
+  "keywords": [
+    "Facebook Account Kit",
+    "Facebook Kit",
+    "Angular 4",
+    "Angular 5",
+    "Team Can Code",
+    "ngx-facebook-kit",
+    "ngxfacebookkit",
+    "ngx facebook kit"
+  ],
+  "author": "TeamCanCode <teamcancode@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teamcancode/ngx-facebook-kit/issues"
+  },
+  "homepage": "https://github.com/teamcancode/ngx-facebook-kit",
   "scripts": {
+    "ngx-publish": "ng-packagr -p ng-package.json && npm publish dist",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
@@ -10,29 +33,26 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
-  "dependencies": {
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "~1.7.3",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
-  },
-  "devDependencies": {
-    "@angular/cli": "~1.7.3",
-    "@angular/compiler-cli": "^5.2.0",
-    "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
+    "core-js": "^2.4.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
@@ -40,9 +60,12 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^2.4.1",
     "protractor": "~5.1.2",
+    "rxjs": "^5.5.6",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3"
+    "typescript": "~2.5.3",
+    "zone.js": "^0.8.19"
   }
 }
