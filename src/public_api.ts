@@ -1,2 +1,2 @@
-export { FacebookKitModule } from './app/shared/facebook-kit.module';
-export { FacebookKitService } from './app/shared/services/facebook-kit.service';
+export { NgxFacebookKitModule } from './app/shared/ngx-facebook-kit.module';
+export { NgxFacebookKitService } from './app/shared/services/ngx-facebook-kit.service';

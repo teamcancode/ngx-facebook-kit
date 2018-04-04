@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { FacebookKitModule } from './shared/facebook-kit.module';
+import { NgxFacebookKitModule } from './shared/ngx-facebook-kit.module';
 import { FormsModule } from '@angular/forms';
-import { FacebookKitService } from './shared/services/facebook-kit.service';
+import { NgxFacebookKitService } from './shared/services/ngx-facebook-kit.service';
 import { environment } from '../environments/environment';
 
 const facebookKitLanguage = environment.facebookKit.language;
@@ -27,15 +27,15 @@ const facebookKitConfigs = {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FacebookKitModule,
+    NgxFacebookKitModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  constructor(facebookKitService: FacebookKitService) {
-    facebookKitService.init(facebookKitConfigs, facebookKitLanguage);
+  constructor(ngxFacebookKitService: NgxFacebookKitService) {
+    ngxFacebookKitService.init(facebookKitConfigs, facebookKitLanguage);
   }
 
 }

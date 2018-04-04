@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { FacebookKitService } from '../services/facebook-kit.service';
+import { NgxFacebookKitService } from '../services/ngx-facebook-kit.service';
 
 @Directive({
   selector: '[ngxLoginFacebookKitPhone]'
@@ -21,7 +21,7 @@ export class LoginFacebookKitPhoneDirective {
         });
   }
 
-  constructor(private _facebookKitService: FacebookKitService) {
+  constructor(private _facebookKitService: NgxFacebookKitService) {
   }
 
 }

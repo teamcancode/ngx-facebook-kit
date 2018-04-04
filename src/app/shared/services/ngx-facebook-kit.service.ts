@@ -5,7 +5,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 declare const AccountKit;
 
 @Injectable()
-export class FacebookKitService {
+export class NgxFacebookKitService {
 
   private readonly SCRIPT_URL = 'https://sdk.accountkit.com/<languge>/sdk.js';
   private readonly STATUS_NOT_INIT = 0;

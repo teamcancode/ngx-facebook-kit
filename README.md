@@ -14,7 +14,7 @@ npm install ngx-facebook-kit
 Edit in `src/app/app.module.ts`:
 ```typescript
 //...
-import { FacebookKitModule, FacebookKitService } from 'ngx-facebook-kit';
+import { NgxFacebookKitModule, NgxFacebookKitService } from 'ngx-facebook-kit';
 
 const facebookKitLanguage = environment.facebookKit.language;
 
@@ -32,14 +32,14 @@ const facebookKitConfigs = {
   //...
   imports: [
     //...
-    FacebookKitModule,
+    NgxFacebookKitModule,
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  constructor(facebookKitService: FacebookKitService) {
-    facebookKitService.init(facebookKitConfigs, facebookKitLanguage);
+  constructor(ngxFcebookKitService: NgxFacebookKitService) {
+    ngxFcebookKitService.init(facebookKitConfigs, facebookKitLanguage);
   }
 
 }
@@ -47,7 +47,7 @@ export class AppModule {
 
 And call in component:
 ```typescript
-constructor(private _facebookKitService: FacebookKitService) {
+constructor(private _ngxFacebookKitService: NgxFacebookKitService) {
 }
 ```
 
@@ -62,7 +62,7 @@ constructor(private _facebookKitService: FacebookKitService) {
 ```typescript
 //Using controller
 login() {
-    this._facebookKitService
+    this._ngxFacebookKitService
         .loginPhone('+84', '0909999999')
         .subscribe((response) => {}, (error) => {});
 }
@@ -79,7 +79,7 @@ login() {
 ```typescript
 //Using controller
 login() {
-    this._facebookKitService
+    this._ngxFacebookKitService
         .loginEmail('teamcancode@localhost.com')
         .subscribe((response) => {}, (error) => {});
 }
