@@ -1,6 +1,6 @@
 {
   "name": "ngx-facebook-kit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Use Facebook Account Kit with Angular5~ (https://developers.facebook.com/docs/accountkit/webjs)",
   "main": "dist/publish.js",
   "types": "dist/publish.d.ts",
